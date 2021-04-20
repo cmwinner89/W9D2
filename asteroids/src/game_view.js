@@ -7,13 +7,14 @@ function GameView (ctx) {
     this.game = new Game();
     // debugger
     this.ctx = ctx;
+    // this.player = player;
 }
 
 GameView.prototype.start = function () {
     let that = this;
    setInterval( function () {
     //    debugger
-       that.game.moveObjects();
+       that.game.step();
        that.game.draw(that.ctx);
    }, 1000/60);
 }

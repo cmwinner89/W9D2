@@ -17,42 +17,46 @@ document.addEventListener("DOMContentLoaded", function() {
   window.canvas = canvas;
   let ctx = canvas.getContext('2d');
 
-  // let mo = new MovingObject({
-  //   pos: [30, 30],
-  //   vel: [1, 0],
-  //   radius: 5,
-  //   color: "#00FF00"
-  // });
-
-  // let mo2 = new MovingObject({
-  //   pos: [80, 30],
-  //   vel: [1, 0],
-  //   radius: 20,
-  //   color: "#FF0000"
-  // });
-
-  // mo.draw(ctx);
-  // mo2.draw(ctx);
-
-  // a = new Asteroid({
-  //   pos: [100, 100]
-  // });
-
-  // a.draw(ctx);
-
-  // let g = new Game();
-  // window.g = g;
-  // g.draw(ctx);
-
-  // setInterval(function() {
-  //   ctx.clearRect(0,0,canvas.width, canvas.height);
-  //   g.draw(ctx);
-  //   g.move();
-  // }, 1000/60);
   
+  // let mo2 = new MovingObject({
+    //   pos: [80, 30],
+    //   vel: [1, 0],
+    //   radius: 20,
+    //   color: "#FF0000"
+    // });
+    
+    // mo.draw(ctx);
+    // mo2.draw(ctx);
+    
+    // a = new Asteroid({
+      //   pos: [100, 100]
+      // });
+      
+      // a.draw(ctx);
+      
+      // let g = new Game();
+      // window.g = g;
+      // g.draw(ctx);
+      
+      // setInterval(function() {
+        //   ctx.clearRect(0,0,canvas.width, canvas.height);
+        //   g.draw(ctx);
+        //   g.move();
+        // }, 1000/60);
+        // let game = new Game();
 
-  let gv = new GameView(ctx);
-  window.gv = gv;
-  gv.start();
+        // let player = new MovingObject({
+        //   pos: [100, 100],
+        //   vel: [0, 0],
+        //   radius: 5,
+        //   color: "#00FF00",
+        //   game: game
+        // });
+        
+    let gv = new GameView(ctx);
+
+
+    window.gv = gv;
+    gv.start();
 
 });
