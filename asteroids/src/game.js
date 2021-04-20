@@ -24,22 +24,55 @@ Game.prototype.addAsteroids = function() {
   while (this.asteroids.length < NUM_ASTEROIDS) {
     let asteroid = new Asteroid({
       pos: that.randomPosition(),
-      vel: Util.randomVec(2)
+      vel: Util.randomVec(2),
+      game: that
     });
+    // debugger
     this.asteroids.push(asteroid);
+
   }
 }
 
 Game.prototype.draw = function(ctx) {
+  // debugger
+  ctx.clearRect(0,0,canvas.width, canvas.height);
+  //Draw player
   for(let asteroid of this.asteroids) {
     asteroid.draw(ctx);
   }
 }
 
-Game.prototype.move = function() {
+Game.prototype.moveObjects = function() {
+  //movePlayer
+  let that = this;
   for(let asteroid of this.asteroids) {
     asteroid.move();
   }
+}
+
+Game.prototype.wrap = function (pos) {
+  let wrappedPos;
+  // debugger
+  let [x, y] = pos;
+  let newX, newY;
+  newX = x;
+  newY = y;
+
+  if (x <= 0){
+    newX = canvas.width + x;
+  }
+  if (x >= canvas.width){
+    newX = x - canvas.width;
+  }
+  if (y <= 0) {
+    newY = canvas.height + y;
+  }
+  if (y >= canvas.height) {
+    newY = canvas.height - y;
+  }
+
+  wrappedPos = [newX, newY];
+  return wrappedPos;
 }
 
 module.exports = Game;

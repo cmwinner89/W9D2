@@ -2,11 +2,13 @@ const MovingObject = require("./moving_object");
 const Util = require("./util");
 const Asteroid = require("./asteroid");
 const Game = require("./game")
+const GameView = require("./game_view");
 
 window.MovingObject = MovingObject;
 window.Util = Util;
 window.Asteroid = Asteroid;
 window.Game = Game;
+window.GameView = GameView;
 
 document.addEventListener("DOMContentLoaded", function() {
   let canvas = document.getElementById("game-canvas");
@@ -15,32 +17,32 @@ document.addEventListener("DOMContentLoaded", function() {
   window.canvas = canvas;
   let ctx = canvas.getContext('2d');
 
-  let mo = new MovingObject({
-    pos: [30, 30],
-    vel: [1, 0],
-    radius: 5,
-    color: "#00FF00"
-  });
+  // let mo = new MovingObject({
+  //   pos: [30, 30],
+  //   vel: [1, 0],
+  //   radius: 5,
+  //   color: "#00FF00"
+  // });
 
-  let mo2 = new MovingObject({
-    pos: [80, 30],
-    vel: [1, 0],
-    radius: 20,
-    color: "#FF0000"
-  });
+  // let mo2 = new MovingObject({
+  //   pos: [80, 30],
+  //   vel: [1, 0],
+  //   radius: 20,
+  //   color: "#FF0000"
+  // });
 
-  mo.draw(ctx);
-  mo2.draw(ctx);
+  // mo.draw(ctx);
+  // mo2.draw(ctx);
 
-  a = new Asteroid({
-    pos: [100, 100]
-  });
+  // a = new Asteroid({
+  //   pos: [100, 100]
+  // });
 
-  a.draw(ctx);
+  // a.draw(ctx);
 
-  let g = new Game();
-  window.g = g;
-  g.draw(ctx);
+  // let g = new Game();
+  // window.g = g;
+  // g.draw(ctx);
 
   // setInterval(function() {
   //   ctx.clearRect(0,0,canvas.width, canvas.height);
@@ -48,5 +50,9 @@ document.addEventListener("DOMContentLoaded", function() {
   //   g.move();
   // }, 1000/60);
   
+
+  let gv = new GameView(ctx);
+  window.gv = gv;
+  gv.start();
 
 });

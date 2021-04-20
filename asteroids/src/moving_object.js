@@ -4,6 +4,7 @@ function MovingObject(options) {
   this.radius = options["radius"];
   this.vel = options["vel"];
   this.color = options["color"];
+  this.game = options["game"];
 }
 
 MovingObject.prototype.draw = function(ctx) {
@@ -18,6 +19,7 @@ MovingObject.prototype.move = function() {
   let [x,y] = [this.pos[0], this.pos[1]];
   let [dx,dy] = [this.vel[0], this.vel[1]];
   this.pos = [x+dx, y+dy];
+  this.pos = this.game.wrap(this.pos);
 }
 
 module.exports = MovingObject;

@@ -6,6 +6,7 @@ function Asteroid(options) {
   this.radius = 20;
   this.vel = options.vel;
   this.pos = options.pos;
+  this.game = options.game;
 }
 
 Util.inherits(Asteroid, MovingObject);
