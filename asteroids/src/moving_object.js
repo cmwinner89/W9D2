@@ -1,4 +1,3 @@
-// pos,radius, velocity, color
 
 function MovingObject(options) {
   this.pos = options["pos"];
@@ -16,10 +15,8 @@ MovingObject.prototype.draw = function(ctx) {
 }
 
 MovingObject.prototype.move = function() {
-  // debugger
   let [x,y] = [this.pos[0], this.pos[1]];
   let [dx,dy] = [this.vel[0], this.vel[1]];
-  // debugger
   this.pos = [x+dx, y+dy];
 }
 
